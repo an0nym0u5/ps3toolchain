@@ -1,25 +1,25 @@
 #!/bin/sh -e
-# gdb-7.2-SPU.sh by Dan Peori (dan.peori@oopo.net)
+# gdb-7.3-SPU.sh by Dan Peori (dan.peori@oopo.net)
 
-if [ ! -d gdb-7.2 ]; then
+if [ ! -d gdb-7.3 ]; then
 
   ## Download the source code.
-  wget --continue ftp://ftp.gnu.org/gnu/gdb/gdb-7.2.tar.bz2
+  wget --continue ftp://ftp.gnu.org/gnu/gdb/gdb-7.3.tar.bz2
 
   ## Unpack the source code.
-  tar xfvj gdb-7.2.tar.bz2
+  tar xfvj gdb-7.3.tar.bz2
 
 fi
 
-if [ ! -d gdb-7.2/build-spu ]; then
+if [ ! -d gdb-7.3/build-spu ]; then
 
   ## Create the build directory.
-  mkdir gdb-7.2/build-spu
+  mkdir gdb-7.3/build-spu
 
 fi
 
 ## Enter the build directory.
-cd gdb-7.2/build-spu
+cd gdb-7.3/build-spu
 
 ## Configure the build.
 ../configure --prefix="$PS3DEV/spu" --target="spu" \
