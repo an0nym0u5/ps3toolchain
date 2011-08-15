@@ -1,7 +1,7 @@
-diff -burN gcc-4.6.1/gcc/config/rs6000/cell64lv2.h gcc-4.6.1-PS3/gcc/config/rs6000/cell64lv2.h
+diff -burN --exclude=.git gcc-4.6.1/gcc/config/rs6000/cell64lv2.h gcc-4.6.1-PS3/gcc/config/rs6000/cell64lv2.h
 --- gcc-4.6.1/gcc/config/rs6000/cell64lv2.h	1969-12-31 19:00:00.000000000 -0500
-+++ gcc-4.6.1-PS3/gcc/config/rs6000/cell64lv2.h	2011-08-15 05:49:12.000000000 -0400
-@@ -0,0 +1,440 @@
++++ gcc-4.6.1-PS3/gcc/config/rs6000/cell64lv2.h	2011-08-15 13:29:53.000000000 -0400
+@@ -0,0 +1,439 @@
 +/* Definitions of target machine for GNU compiler,
 +   for 64 bit PowerPC linux.
 +   Copyright (C) 2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008,
@@ -426,7 +426,7 @@ diff -burN gcc-4.6.1/gcc/config/rs6000/cell64lv2.h gcc-4.6.1-PS3/gcc/config/rs60
 +		   && SCALAR_FLOAT_MODE_P (GET_MODE (X))		\
 +		   && BITS_PER_WORD == HOST_BITS_PER_INT)))))
 +
-+/* FIXME: TOTALLY UNSURE ABOUT THIS REDEFINE, PLEASE REVIEW --an0n
++/* FIXME: TOTALLY UNSURE ABOUT WHY THIS REDEFINE WAS HERE --an0n
 +#define TARGET_ASM_FILE_END rs6000_elf_end_indicate_exec_stack
 +*/
 +
@@ -441,7 +441,7 @@ diff -burN gcc-4.6.1/gcc/config/rs6000/cell64lv2.h gcc-4.6.1-PS3/gcc/config/rs60
 +#define RS6000_DEFAULT_LONG_DOUBLE_SIZE 128
 +#endif
 +
-diff -burN gcc-4.6.1/gcc/config/rs6000/rs6000.c gcc-4.6.1-PS3/gcc/config/rs6000/rs6000.c
+diff -burN --exclude=.git gcc-4.6.1/gcc/config/rs6000/rs6000.c gcc-4.6.1-PS3/gcc/config/rs6000/rs6000.c
 --- gcc-4.6.1/gcc/config/rs6000/rs6000.c	2011-06-20 11:12:44.000000000 -0400
 +++ gcc-4.6.1-PS3/gcc/config/rs6000/rs6000.c	2011-08-15 03:53:36.000000000 -0400
 @@ -1214,6 +1214,13 @@
@@ -484,7 +484,7 @@ diff -burN gcc-4.6.1/gcc/config/rs6000/rs6000.c gcc-4.6.1-PS3/gcc/config/rs6000/
 +#endif
 +
  #include "gt-rs6000.h"
-diff -burN gcc-4.6.1/gcc/config/rs6000/t-cell64lv2 gcc-4.6.1-PS3/gcc/config/rs6000/t-cell64lv2
+diff -burN --exclude=.git gcc-4.6.1/gcc/config/rs6000/t-cell64lv2 gcc-4.6.1-PS3/gcc/config/rs6000/t-cell64lv2
 --- gcc-4.6.1/gcc/config/rs6000/t-cell64lv2	1969-12-31 19:00:00.000000000 -0500
 +++ gcc-4.6.1-PS3/gcc/config/rs6000/t-cell64lv2	2011-08-15 03:53:36.000000000 -0400
 @@ -0,0 +1,25 @@
@@ -513,7 +513,7 @@ diff -burN gcc-4.6.1/gcc/config/rs6000/t-cell64lv2 gcc-4.6.1-PS3/gcc/config/rs60
 +LIB2FUNCS_EXTRA := $(sort $(LIB2FUNCS_EXTRA))
 +
 +TARGET_LIBGCC2_CFLAGS += -mno-minimal-toc
-diff -burN gcc-4.6.1/gcc/config.gcc gcc-4.6.1-PS3/gcc/config.gcc
+diff -burN --exclude=.git gcc-4.6.1/gcc/config.gcc gcc-4.6.1-PS3/gcc/config.gcc
 --- gcc-4.6.1/gcc/config.gcc	2011-05-22 16:03:43.000000000 -0400
 +++ gcc-4.6.1-PS3/gcc/config.gcc	2011-08-15 05:36:01.000000000 -0400
 @@ -2048,6 +2048,15 @@
@@ -532,7 +532,7 @@ diff -burN gcc-4.6.1/gcc/config.gcc gcc-4.6.1-PS3/gcc/config.gcc
  powerpc-*-darwin*)
  	extra_options="${extra_options} rs6000/darwin.opt"
  	extra_parts="crt2.o"
-diff -burN gcc-4.6.1/libgcc/config.host gcc-4.6.1-PS3/libgcc/config.host
+diff -burN --exclude=.git gcc-4.6.1/libgcc/config.host gcc-4.6.1-PS3/libgcc/config.host
 --- gcc-4.6.1/libgcc/config.host	2011-03-14 02:06:23.000000000 -0400
 +++ gcc-4.6.1-PS3/libgcc/config.host	2011-08-15 03:53:36.000000000 -0400
 @@ -484,6 +484,8 @@
